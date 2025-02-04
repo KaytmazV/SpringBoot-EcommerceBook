@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Kitap Mağazası</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+    <div class="header-content">
+        <a href="index.html" class="site-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            E-Kitap Mağazası
+        </a>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cart.html" class="nav-link">
+                        Sepetim
+                        <span class="cart-badge" id="cartCount">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" id="loginBtn" class="nav-button">Giriş Yap</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" id="registerBtn" class="nav-button">Kayıt Ol</button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main-content">
+    <div id="bookList" class="book-grid">
+        <!-- Books will be dynamically inserted here -->
+        <!-- Loading skeleton -->
+        <div class="book-item skeleton">
+            <div class="book-image skeleton"></div>
+            <div class="book-content">
+                <div class="skeleton" style="height: 24px; width: 80%; margin-bottom: 8px;"></div>
+                <div class="skeleton" style="height: 18px; width: 60%; margin-bottom: 16px;"></div>
+                <div class="skeleton" style="height: 40px;"></div>
+            </div>
+        </div>
+        <!-- Repeat skeleton items as needed -->
+    </div>
+    <button id="loadMoreBtn" class="btn btn-primary" style="margin: 2rem auto; display: none;">
+        Daha Fazla Yükle
+    </button>
+</main>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Giriş Yap</h2>
+            <button type="button" class="close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username" class="form-label">Kullanıcı Adı</label>
+                <input type="text" id="username" name="username" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Şifre</label>
+                <input type="password" id="password" name="password" class="form-input" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Giriş Yap</button>
+        </form>
+    </div>
+</div>
+
+<!-- Register Modal -->
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Kayıt Ol</h2>
+            <button type="button" class="close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="reg-username" class="form-label">Kullanıcı Adı</label>
+                <input type="text" id="reg-username" name="username" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-email" class="form-label">E-posta</label>
+                <input type="email" id="reg-email" name="email" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-password" class="form-label">Şifre</label>
+                <input type="password" id="reg-password" name="password" class="form-input" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Kayıt Ol</button>
+        </form>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+
